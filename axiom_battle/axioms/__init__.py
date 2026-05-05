@@ -19,6 +19,7 @@ from .axiom_v2_layout import LayoutAxiomV2
 from .axiom8_causal_v2 import CausalAxiomV2
 from .axiom8_causal_v3 import CausalAxiomV3
 from .axiom_v3_growth import GrowthAxiomV3
+from .axiom_v3_layout import LayoutAxiomV3
 
 AXIOM_REGISTRY = {
     "axiom1_growth": GrowthAxiom,
@@ -45,6 +46,7 @@ AXIOM_REGISTRY_V2 = {
 AXIOM_REGISTRY_V3 = {
     "axiom1_growth_v3": GrowthAxiomV3,
     "axiom8_causal_v3": CausalAxiomV3,
+    "axiom4_layout_v3": LayoutAxiomV3,
 }
 
 __all__ = [
@@ -56,6 +58,6 @@ __all__ = [
     "LayoutAxiomV2",
     "NarrativeAxiomV2", "BoundaryAxiomV2", "FreedomAxiomV2",
     "CausalAxiomV2",
-    "GrowthAxiomV3", "CausalAxiomV3",
+    "GrowthAxiomV3", "CausalAxiomV3", "LayoutAxiomV3",
     "AXIOM_REGISTRY", "AXIOM_REGISTRY_V2", "AXIOM_REGISTRY_V3",
 ]

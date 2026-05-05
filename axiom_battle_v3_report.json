@@ -648,6 +648,29 @@
       "verdict": "ALIVE",
       "reason": "通过攻击考验，生存压力80.0%",
       "survival_pressure": 0.8
+    },
+    {
+      "axiom": "axiom4_layout_v3",
+      "statement": "差异关系的结构化即论证——空间/时间/声音是差异结构的特定形式，形式可替换，结构化本质不变",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "无空间布局的论证：纯声音/播客/内心独白——没有物理空间，概念差异仍结构化组织",
+          "severity": "MEDIUM",
+          "evidence": "哲学播客通过语调/停顿/节奏差异传递论证结构；盲人通过触觉差异阅读盲文",
+          "expected_impact": "空间布局非必要——差异关系的结构化才是论证本质，空间只是形式之一"
+        },
+        {
+          "type": "counterfactual",
+          "description": "无边宇宙：空间无限均匀则无差异——论证需要差异，但无边宇宙中差异还存在吗？",
+          "severity": "MEDIUM",
+          "evidence": "无边宇宙若完全均匀，没有任何「这里」与「那里」的差异——但概念差异（意义差异）仍然存在",
+          "expected_impact": "论证依赖概念差异，不依赖空间差异——无边宇宙中概念差异仍然结构化，论证依然成立"
+        }
+      ],
+      "verdict": "ALIVE",
+      "reason": "通过攻击考验，生存压力60.0%",
+      "survival_pressure": 0.6
     }
   ],
   "conflict_results": {
@@ -671,71 +694,93 @@
     }
   },
   "arena_summary": {
-    "total_axioms": 16,
-    "survived": 9,
+    "total_axioms": 18,
+    "survived": 11,
     "has_died": 7,
-    "avg_survival_pressure": 0.2125,
+    "avg_survival_pressure": 0.2711,
     "ranking": [
+      [
+        "axiom8_causal_v3",
+        {
+          "name": "axiom8_causal_v3",
+          "event_count": 1,
+          "avg_intensity": 0.8,
+          "latest_event": "alive",
+          "deaths": 0,
+          "alive_count": 1
+        }
+      ],
       [
         "axiom3_color_v2",
         {
           "name": "axiom3_color_v2",
-          "event_count": 4,
+          "event_count": 5,
           "avg_intensity": 0.6,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 4
+          "alive_count": 5
         }
       ],
       [
         "axiom7_freedom_v2",
         {
           "name": "axiom7_freedom_v2",
-          "event_count": 4,
+          "event_count": 5,
           "avg_intensity": 0.6,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 4
+          "alive_count": 5
+        }
+      ],
+      [
+        "axiom1_growth_v3",
+        {
+          "name": "axiom1_growth_v3",
+          "event_count": 1,
+          "avg_intensity": 0.6,
+          "latest_event": "alive",
+          "deaths": 0,
+          "alive_count": 1
         }
       ],
       [
         "axiom2_light_v2",
         {
           "name": "axiom2_light_v2",
-          "event_count": 4,
+          "event_count": 5,
           "avg_intensity": 0.5,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 4
+          "alive_count": 5
         }
       ],
       [
         "axiom5_narrative_v2",
         {
           "name": "axiom5_narrative_v2",
-          "event_count": 4,
+          "event_count": 5,
           "avg_intensity": 0.5,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 4
+          "alive_count": 5
         }
       ],
       [
         "axiom6_boundary_v2",
         {
           "name": "axiom6_boundary_v2",
-          "event_count": 4,
+          "event_count": 5,
           "avg_intensity": 0.5,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 4
+          "alive_count": 5
         }
       ],
       [
         "axiom8_causal_v2",
         {
           "name": "axiom8_causal_v2",
-          "event_count": 3,
+          "event_count": 4,
           "avg_intensity": 0.4,
           "latest_event": "suspend",
           "deaths": 0,
@@ -746,9 +791,20 @@
         "axiom1_growth_v2",
         {
           "name": "axiom1_growth_v2",
-          "event_count": 4,
+          "event_count": 5,
           "avg_intensity": 0.3,
           "latest_event": "modify",
+          "deaths": 0,
+          "alive_count": 0
+        }
+      ],
+      [
+        "axiom4_layout_v2",
+        {
+          "name": "axiom4_layout_v2",
+          "event_count": 5,
+          "avg_intensity": 0.08,
+          "latest_event": "suspend",
           "deaths": 0,
           "alive_count": 0
         }
@@ -757,10 +813,10 @@
         "axiom1_growth",
         {
           "name": "axiom1_growth",
-          "event_count": 4,
+          "event_count": 5,
           "avg_intensity": 0.0,
           "latest_event": "death",
-          "deaths": 4,
+          "deaths": 5,
           "alive_count": 0
         }
       ],
@@ -768,10 +824,10 @@
         "axiom2_light",
         {
           "name": "axiom2_light",
-          "event_count": 4,
+          "event_count": 5,
           "avg_intensity": 0.0,
           "latest_event": "death",
-          "deaths": 4,
+          "deaths": 5,
           "alive_count": 0
         }
       ],
@@ -779,10 +835,10 @@
         "axiom3_color",
         {
           "name": "axiom3_color",
-          "event_count": 4,
+          "event_count": 5,
           "avg_intensity": 0.0,
           "latest_event": "death",
-          "deaths": 4,
+          "deaths": 5,
           "alive_count": 0
         }
       ],
@@ -790,7 +846,7 @@
         "axiom4_layout",
         {
           "name": "axiom4_layout",
-          "event_count": 4,
+          "event_count": 5,
           "avg_intensity": 0.0,
           "latest_event": "modify",
           "deaths": 0,
@@ -801,39 +857,6 @@
         "axiom5_narrative",
         {
           "name": "axiom5_narrative",
-          "event_count": 4,
-          "avg_intensity": 0.0,
-          "latest_event": "death",
-          "deaths": 4,
-          "alive_count": 0
-        }
-      ],
-      [
-        "axiom6_boundary",
-        {
-          "name": "axiom6_boundary",
-          "event_count": 4,
-          "avg_intensity": 0.0,
-          "latest_event": "death",
-          "deaths": 4,
-          "alive_count": 0
-        }
-      ],
-      [
-        "axiom7_freedom",
-        {
-          "name": "axiom7_freedom",
-          "event_count": 4,
-          "avg_intensity": 0.0,
-          "latest_event": "death",
-          "deaths": 4,
-          "alive_count": 0
-        }
-      ],
-      [
-        "axiom8_causal",
-        {
-          "name": "axiom8_causal",
           "event_count": 5,
           "avg_intensity": 0.0,
           "latest_event": "death",
@@ -842,13 +865,35 @@
         }
       ],
       [
-        "axiom4_layout_v2",
+        "axiom6_boundary",
         {
-          "name": "axiom4_layout_v2",
-          "event_count": 4,
+          "name": "axiom6_boundary",
+          "event_count": 5,
           "avg_intensity": 0.0,
-          "latest_event": "modify",
-          "deaths": 0,
+          "latest_event": "death",
+          "deaths": 5,
+          "alive_count": 0
+        }
+      ],
+      [
+        "axiom7_freedom",
+        {
+          "name": "axiom7_freedom",
+          "event_count": 5,
+          "avg_intensity": 0.0,
+          "latest_event": "death",
+          "deaths": 5,
+          "alive_count": 0
+        }
+      ],
+      [
+        "axiom8_causal",
+        {
+          "name": "axiom8_causal",
+          "event_count": 6,
+          "avg_intensity": 0.0,
+          "latest_event": "death",
+          "deaths": 6,
           "alive_count": 0
         }
       ]
