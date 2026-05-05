@@ -694,93 +694,104 @@
     }
   },
   "arena_summary": {
-    "total_axioms": 18,
-    "survived": 11,
+    "total_axioms": 19,
+    "survived": 12,
     "has_died": 7,
-    "avg_survival_pressure": 0.2711,
+    "avg_survival_pressure": 0.2947,
     "ranking": [
       [
         "axiom8_causal_v3",
         {
           "name": "axiom8_causal_v3",
-          "event_count": 1,
+          "event_count": 4,
           "avg_intensity": 0.8,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 1
+          "alive_count": 4
         }
       ],
       [
         "axiom3_color_v2",
         {
           "name": "axiom3_color_v2",
-          "event_count": 5,
+          "event_count": 8,
           "avg_intensity": 0.6,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 5
+          "alive_count": 8
         }
       ],
       [
         "axiom7_freedom_v2",
         {
           "name": "axiom7_freedom_v2",
-          "event_count": 5,
+          "event_count": 8,
           "avg_intensity": 0.6,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 5
+          "alive_count": 8
         }
       ],
       [
         "axiom1_growth_v3",
         {
           "name": "axiom1_growth_v3",
-          "event_count": 1,
+          "event_count": 4,
           "avg_intensity": 0.6,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 1
+          "alive_count": 4
+        }
+      ],
+      [
+        "axiom4_layout_v3",
+        {
+          "name": "axiom4_layout_v3",
+          "event_count": 3,
+          "avg_intensity": 0.6,
+          "latest_event": "alive",
+          "deaths": 0,
+          "alive_count": 3
         }
       ],
       [
         "axiom2_light_v2",
         {
           "name": "axiom2_light_v2",
-          "event_count": 5,
+          "event_count": 8,
           "avg_intensity": 0.5,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 5
+          "alive_count": 8
         }
       ],
       [
         "axiom5_narrative_v2",
         {
           "name": "axiom5_narrative_v2",
-          "event_count": 5,
+          "event_count": 8,
           "avg_intensity": 0.5,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 5
+          "alive_count": 8
         }
       ],
       [
         "axiom6_boundary_v2",
         {
           "name": "axiom6_boundary_v2",
-          "event_count": 5,
+          "event_count": 8,
           "avg_intensity": 0.5,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 5
+          "alive_count": 8
         }
       ],
       [
         "axiom8_causal_v2",
         {
           "name": "axiom8_causal_v2",
-          "event_count": 4,
+          "event_count": 7,
           "avg_intensity": 0.4,
           "latest_event": "suspend",
           "deaths": 0,
@@ -791,7 +802,7 @@
         "axiom1_growth_v2",
         {
           "name": "axiom1_growth_v2",
-          "event_count": 5,
+          "event_count": 8,
           "avg_intensity": 0.3,
           "latest_event": "modify",
           "deaths": 0,
@@ -802,8 +813,8 @@
         "axiom4_layout_v2",
         {
           "name": "axiom4_layout_v2",
-          "event_count": 5,
-          "avg_intensity": 0.08,
+          "event_count": 8,
+          "avg_intensity": 0.2,
           "latest_event": "suspend",
           "deaths": 0,
           "alive_count": 0
@@ -813,10 +824,10 @@
         "axiom1_growth",
         {
           "name": "axiom1_growth",
-          "event_count": 5,
+          "event_count": 8,
           "avg_intensity": 0.0,
           "latest_event": "death",
-          "deaths": 5,
+          "deaths": 8,
           "alive_count": 0
         }
       ],
@@ -824,10 +835,10 @@
         "axiom2_light",
         {
           "name": "axiom2_light",
-          "event_count": 5,
+          "event_count": 8,
           "avg_intensity": 0.0,
           "latest_event": "death",
-          "deaths": 5,
+          "deaths": 8,
           "alive_count": 0
         }
       ],
@@ -835,10 +846,10 @@
         "axiom3_color",
         {
           "name": "axiom3_color",
-          "event_count": 5,
+          "event_count": 8,
           "avg_intensity": 0.0,
           "latest_event": "death",
-          "deaths": 5,
+          "deaths": 8,
           "alive_count": 0
         }
       ],
@@ -846,7 +857,7 @@
         "axiom4_layout",
         {
           "name": "axiom4_layout",
-          "event_count": 5,
+          "event_count": 8,
           "avg_intensity": 0.0,
           "latest_event": "modify",
           "deaths": 0,
@@ -857,10 +868,10 @@
         "axiom5_narrative",
         {
           "name": "axiom5_narrative",
-          "event_count": 5,
+          "event_count": 8,
           "avg_intensity": 0.0,
           "latest_event": "death",
-          "deaths": 5,
+          "deaths": 8,
           "alive_count": 0
         }
       ],
@@ -868,10 +879,10 @@
         "axiom6_boundary",
         {
           "name": "axiom6_boundary",
-          "event_count": 5,
+          "event_count": 8,
           "avg_intensity": 0.0,
           "latest_event": "death",
-          "deaths": 5,
+          "deaths": 8,
           "alive_count": 0
         }
       ],
@@ -879,10 +890,10 @@
         "axiom7_freedom",
         {
           "name": "axiom7_freedom",
-          "event_count": 5,
+          "event_count": 8,
           "avg_intensity": 0.0,
           "latest_event": "death",
-          "deaths": 5,
+          "deaths": 8,
           "alive_count": 0
         }
       ],
@@ -890,10 +901,10 @@
         "axiom8_causal",
         {
           "name": "axiom8_causal",
-          "event_count": 6,
+          "event_count": 9,
           "avg_intensity": 0.0,
           "latest_event": "death",
-          "deaths": 6,
+          "deaths": 9,
           "alive_count": 0
         }
       ]

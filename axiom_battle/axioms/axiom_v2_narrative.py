@@ -15,6 +15,7 @@ class NarrativeAxiomV2(Axiom):
         "序列是意义组织的充分条件 — 时序因果是意义涌现的一种通道，"
         "非时序组织（数学/地图）同样有效但不通过序列产生意义"
     )
+    depends_on = ["axiom4_layout_v2"]
 
     def attack(self) -> list[Attack]:
         return [
