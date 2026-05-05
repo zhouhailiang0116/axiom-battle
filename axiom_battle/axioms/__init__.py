@@ -16,3 +16,10 @@ AXIOM_REGISTRY = {
     "axiom6_boundary": BoundaryAxiom,
     "axiom7_freedom": FreedomAxiom,
 }
+
+__all__ = [
+    "Axiom", "Attack", "AxiomCase", "Severity", "Verdict",
+    "GrowthAxiom", "LightAxiom", "ColorAxiom",
+    "LayoutAxiom", "NarrativeAxiom", "BoundaryAxiom", "FreedomAxiom",
+    "AXIOM_REGISTRY",
+]
