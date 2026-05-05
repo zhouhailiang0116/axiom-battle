@@ -445,48 +445,41 @@
       "survival_pressure": 0.6
     },
     {
-      "axiom": "axiom4_layout",
-      "statement": "空间即论证 — 布局是论证的结构化呈现",
+      "axiom": "axiom4_layout_v2",
+      "statement": "差异关系的结构化即论证——空间布局是差异结构的一种可视化形式",
       "attacks": [
         {
           "type": "reverse",
-          "description": "纯声音论证：广播/播客没有空间布局，论证依然完整",
-          "severity": "HIGH",
-          "evidence": "哲学播客可以在没有视觉空间的情况下完成复杂论证",
-          "expected_impact": "论证不依赖空间布局"
+          "description": "纯声音论证：无空间布局，概念差异仍通过语音组织",
+          "severity": "MEDIUM",
+          "evidence": "播客/广播：时间流中组织概念，靠语调/停顿/节奏差异传递论证结构",
+          "expected_impact": "空间布局非必要，差异组织才是本质"
         },
         {
           "type": "reverse",
-          "description": "线性文本：一维文字流，依赖阅读顺序而非空间",
-          "severity": "MEDIUM",
-          "evidence": "论文的逻辑流是一维的，不依赖页面空间安排",
-          "expected_impact": "空间布局是辅助，不是论证本质"
+          "description": "线性文本：一维文字差异（词义/逻辑差异）承载论证，不依赖空间",
+          "severity": "LOW",
+          "evidence": "盲人通过触觉盲文阅读，差异在触觉维度展开，无需视觉空间",
+          "expected_impact": "差异结构可以在任意维度展开"
         },
         {
           "type": "cross_domain",
-          "description": "时间布局：音乐的时间结构是否也算一种'空间论证'？",
+          "description": "时间布局：音乐的时间差异结构（主题-展开-再现）= 音乐论证",
           "severity": "MEDIUM",
-          "evidence": "赋格曲的主题陈述/展开/再现 = 音乐论证",
-          "expected_impact": "时间序列可以替代空间布局"
-        },
-        {
-          "type": "cross_domain",
-          "description": "数学：证明步骤是时间序列，不是空间布局",
-          "severity": "MEDIUM",
-          "evidence": "数学证明的'布局'是逻辑顺序，不存在于物理空间",
-          "expected_impact": "论证的本质是逻辑，不是空间"
+          "evidence": "赋格曲的论证结构：主题陈述=立论，对位展开=论证，再现=总结",
+          "expected_impact": "时间差异结构与空间差异结构等价"
         },
         {
           "type": "counterfactual",
-          "description": "零维点：没有空间延伸，论证还成立吗？",
-          "severity": "CRITICAL",
-          "evidence": "纯语言（无书写）可以在思想层面完成论证，不依赖空间",
-          "expected_impact": "空间布局不是论证的必要条件"
+          "description": "无边宇宙：无限均匀空间没有差异，论证如何成立？",
+          "severity": "MEDIUM",
+          "evidence": "如果空间处处完全均匀，没有「这里」与「那里」的差异，论证结构无从建立",
+          "expected_impact": "论证需要差异，不依赖空间本身"
         }
       ],
-      "verdict": "MODIFIED",
-      "reason": "被致命攻击击穿，需要修正表述",
-      "survival_pressure": 0.0
+      "verdict": "SUSPENDED",
+      "reason": "生存压力过大，暂挂",
+      "survival_pressure": 0.4
     },
     {
       "axiom": "axiom5_narrative_v2",
@@ -588,6 +581,75 @@
       "survival_pressure": 0.4
     }
   ],
+  "v3_results": [
+    {
+      "axiom": "axiom1_growth_v3",
+      "statement": "系统在开放能量流中存在时，向有序化方向生长或收缩——扩张与内聚皆为生长，边界是有序化的结果而非前提",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "向内收缩是有序化，但收缩后没有「抵达」任何边界",
+          "severity": "MEDIUM",
+          "evidence": "冥想时意识内聚，有序度增加，但没有任何物理边界被触及",
+          "expected_impact": "收缩是有序化，但不等同于抵达边界——需要区分过程与结果"
+        },
+        {
+          "type": "cross_domain",
+          "description": "数学：函数在奇点处发散，永远生长却永远没有「方向」",
+          "severity": "MEDIUM",
+          "evidence": "y=1/x 在 x→0 时趋向无穷，生长无限持续但从未收敛到任何边界",
+          "expected_impact": "发散函数没有极限，有序化需要一个吸引态"
+        },
+        {
+          "type": "counterfactual",
+          "description": "无边宇宙：能量流存在但空间无边界，生长向何处？",
+          "severity": "LOW",
+          "evidence": "无边宇宙中能量梯度依然存在（温度差/密度差），有序化沿梯度方向展开，不依赖空间边界",
+          "expected_impact": "有序化方向来自能量梯度，不来自空间边界——边界是有序化的可能结果，不是前提"
+        }
+      ],
+      "verdict": "ALIVE",
+      "reason": "通过攻击考验，生存压力60.0%",
+      "survival_pressure": 0.6
+    },
+    {
+      "axiom": "axiom8_causal_v3",
+      "statement": "因果链是层次内（物理/数字/社会）的语义关系——形式系统描述因果模式，模式本身不生成因果",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "SEM结构方程模型：用条件概率形式化因果，完备描述因果模式，数学上不需要'因果'语义",
+          "severity": "LOW",
+          "evidence": "贝叶斯网络 x→y 用 P(y|x) 量化，不引入'原因'实体，只描述条件依赖",
+          "expected_impact": "形式系统可以完备描述因果模式，无需'因果'语义——因果是冗余概念"
+        },
+        {
+          "type": "cross_domain",
+          "description": "量子纠缠：贝尔实验违反贝尔不等式，量子层面非定域关联存在，但宏观物理因果依然成立",
+          "severity": "LOW",
+          "evidence": "量子纠缠在粒子层次是关联，宏观因果在日常层次是因果——层次分离，因果各层有效",
+          "expected_impact": "量子关联≠宏观因果，不是对因果公理的否定，而是层次分离的证明"
+        },
+        {
+          "type": "counterfactual",
+          "description": "大爆炸奇点：时间从t>0开始，t=0之前无时间/无因果概念——因果有起点",
+          "severity": "LOW",
+          "evidence": "宇宙热大爆炸模型：t=10^-43秒前时空量子涨落，无经典因果；t>0后因果链才存在",
+          "expected_impact": "因果有起点，不是普适永恒——但在因果存在范围内，因果链有效"
+        },
+        {
+          "type": "cross_domain",
+          "description": "自由意志：人的有意识决策是否打破物理因果链？",
+          "severity": "MEDIUM",
+          "evidence": "神经科学：意识决策有神经相关性，但因果效力存疑（自由意志论证）",
+          "expected_impact": "意识决策可能是因果链的例外——社会/意识层因果与物理层因果不同"
+        }
+      ],
+      "verdict": "ALIVE",
+      "reason": "通过攻击考验，生存压力80.0%",
+      "survival_pressure": 0.8
+    }
+  ],
   "conflict_results": {
     "conflicts": [
       "冲突：叙事 vs 自由 [OPPOSITE]",
@@ -618,62 +680,62 @@
         "axiom3_color_v2",
         {
           "name": "axiom3_color_v2",
-          "event_count": 3,
+          "event_count": 4,
           "avg_intensity": 0.6,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 3
+          "alive_count": 4
         }
       ],
       [
         "axiom7_freedom_v2",
         {
           "name": "axiom7_freedom_v2",
-          "event_count": 3,
+          "event_count": 4,
           "avg_intensity": 0.6,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 3
+          "alive_count": 4
         }
       ],
       [
         "axiom2_light_v2",
         {
           "name": "axiom2_light_v2",
-          "event_count": 3,
+          "event_count": 4,
           "avg_intensity": 0.5,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 3
+          "alive_count": 4
         }
       ],
       [
         "axiom5_narrative_v2",
         {
           "name": "axiom5_narrative_v2",
-          "event_count": 3,
+          "event_count": 4,
           "avg_intensity": 0.5,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 3
+          "alive_count": 4
         }
       ],
       [
         "axiom6_boundary_v2",
         {
           "name": "axiom6_boundary_v2",
-          "event_count": 3,
+          "event_count": 4,
           "avg_intensity": 0.5,
           "latest_event": "alive",
           "deaths": 0,
-          "alive_count": 3
+          "alive_count": 4
         }
       ],
       [
         "axiom8_causal_v2",
         {
           "name": "axiom8_causal_v2",
-          "event_count": 2,
+          "event_count": 3,
           "avg_intensity": 0.4,
           "latest_event": "suspend",
           "deaths": 0,
@@ -684,7 +746,7 @@
         "axiom1_growth_v2",
         {
           "name": "axiom1_growth_v2",
-          "event_count": 3,
+          "event_count": 4,
           "avg_intensity": 0.3,
           "latest_event": "modify",
           "deaths": 0,
@@ -695,10 +757,10 @@
         "axiom1_growth",
         {
           "name": "axiom1_growth",
-          "event_count": 3,
+          "event_count": 4,
           "avg_intensity": 0.0,
           "latest_event": "death",
-          "deaths": 3,
+          "deaths": 4,
           "alive_count": 0
         }
       ],
@@ -706,10 +768,10 @@
         "axiom2_light",
         {
           "name": "axiom2_light",
-          "event_count": 3,
+          "event_count": 4,
           "avg_intensity": 0.0,
           "latest_event": "death",
-          "deaths": 3,
+          "deaths": 4,
           "alive_count": 0
         }
       ],
@@ -717,10 +779,10 @@
         "axiom3_color",
         {
           "name": "axiom3_color",
-          "event_count": 3,
+          "event_count": 4,
           "avg_intensity": 0.0,
           "latest_event": "death",
-          "deaths": 3,
+          "deaths": 4,
           "alive_count": 0
         }
       ],
@@ -728,7 +790,7 @@
         "axiom4_layout",
         {
           "name": "axiom4_layout",
-          "event_count": 3,
+          "event_count": 4,
           "avg_intensity": 0.0,
           "latest_event": "modify",
           "deaths": 0,
@@ -739,39 +801,6 @@
         "axiom5_narrative",
         {
           "name": "axiom5_narrative",
-          "event_count": 3,
-          "avg_intensity": 0.0,
-          "latest_event": "death",
-          "deaths": 3,
-          "alive_count": 0
-        }
-      ],
-      [
-        "axiom6_boundary",
-        {
-          "name": "axiom6_boundary",
-          "event_count": 3,
-          "avg_intensity": 0.0,
-          "latest_event": "death",
-          "deaths": 3,
-          "alive_count": 0
-        }
-      ],
-      [
-        "axiom7_freedom",
-        {
-          "name": "axiom7_freedom",
-          "event_count": 3,
-          "avg_intensity": 0.0,
-          "latest_event": "death",
-          "deaths": 3,
-          "alive_count": 0
-        }
-      ],
-      [
-        "axiom8_causal",
-        {
-          "name": "axiom8_causal",
           "event_count": 4,
           "avg_intensity": 0.0,
           "latest_event": "death",
@@ -780,10 +809,43 @@
         }
       ],
       [
+        "axiom6_boundary",
+        {
+          "name": "axiom6_boundary",
+          "event_count": 4,
+          "avg_intensity": 0.0,
+          "latest_event": "death",
+          "deaths": 4,
+          "alive_count": 0
+        }
+      ],
+      [
+        "axiom7_freedom",
+        {
+          "name": "axiom7_freedom",
+          "event_count": 4,
+          "avg_intensity": 0.0,
+          "latest_event": "death",
+          "deaths": 4,
+          "alive_count": 0
+        }
+      ],
+      [
+        "axiom8_causal",
+        {
+          "name": "axiom8_causal",
+          "event_count": 5,
+          "avg_intensity": 0.0,
+          "latest_event": "death",
+          "deaths": 5,
+          "alive_count": 0
+        }
+      ],
+      [
         "axiom4_layout_v2",
         {
           "name": "axiom4_layout_v2",
-          "event_count": 3,
+          "event_count": 4,
           "avg_intensity": 0.0,
           "latest_event": "modify",
           "deaths": 0,

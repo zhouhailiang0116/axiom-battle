@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-axiom-battle 完整运行器 v2
+axiom-battle 完整运行器 v3
 集成 axiom 攻击框架 + 冲突仲裁 + 历史Arena追踪
-支持 v1 公理 vs v2 公理对比
+支持 v1 / v2 / v3 公理多轮对抗
 """
 import json
 import sys
 from pathlib import Path
 
-from axiom_battle.axioms import AXIOM_REGISTRY, AXIOM_REGISTRY_V2
+from axiom_battle.axioms import AXIOM_REGISTRY, AXIOM_REGISTRY_V2, AXIOM_REGISTRY_V3
 from axiom_battle.causal_arbitrator import ConflictResolver, AxiomClaim
 
 # Arena 使用绝对路径
@@ -97,8 +97,8 @@ if __name__ == "__main__":
 
     # v1 公理对抗
     print("=" * 60)
-    print("  axiom-battle 公理对抗验证报告 v2")
-    print("  第二轮：v1 攻击 vs v2 精化")
+    print("  axiom-battle 公理对抗验证报告 v3")
+    print("  第三轮：v1 / v2 / v3 多轮精化")
     v1_results = run_attacks(AXIOM_REGISTRY, "v1")
     print_round(v1_results, "v1 第一轮攻击")
 
@@ -106,19 +106,26 @@ if __name__ == "__main__":
     v2_results = run_attacks(AXIOM_REGISTRY_V2, "v2")
     print_round(v2_results, "v2 第二轮攻击（精化后）")
 
+    # v3 公理对抗（第三轮精化）
+    v3_results = run_attacks(AXIOM_REGISTRY_V3, "v3")
+    print_round(v3_results, "v3 第三轮攻击（再精化）")
+
     # v1 vs v2 对比
     print(f"\n{'='*60}")
-    print("  【v1 vs v2 对比】")
+    print("  【v1 vs v2 vs v3 对比】")
     print()
-    print(f"  {'公理':<25} {'v1判决':>10} {'v2判决':>10} {'变化':>10}")
-    print(f"  {'-'*55}")
+    print(f"  {'公理':<25} {'v1判决':>10} {'v2判决':>10} {'v3判决':>10} {'变化':>10}")
+    print(f"  {'-'*65}")
     v1_by_name = {r["axiom"]: r for r in v1_results}
     v2_by_name = {r["axiom"]: r for r in v2_results}
+    v3_by_name = {r["axiom"]: r for r in v3_results} if v3_results else {}
+    shown = set()
     for name in sorted(v1_by_name.keys()):
         v1 = v1_by_name[name]
         v2 = v2_by_name.get(name)
         v1d = v1["verdict"]
         v2d = v2["verdict"] if v2 else "N/A"
+        v3d = v3_by_name.get(name, {}).get("verdict", "N/A") if v3_by_name else "N/A"
         if v1d == v2d:
             change = "—"
         elif v1d == "DEAD" and v2d in ("ALIVE", "MODIFIED", "STRENGTHENED"):
@@ -127,7 +134,13 @@ if __name__ == "__main__":
             change = "❌退化"
         else:
             change = f"{v1d}→{v2d}"
-        print(f"  {name:<25} {v1d:>10} {v2d:>10} {change:>10}")
+        print(f"  {name:<25} {v1d:>10} {v2d:>10} {v3d:>10} {change:>10}")
+        shown.add(name)
+    # v3-only axioms
+    for name in sorted(v3_by_name.keys()):
+        if name not in shown:
+            v3d = v3_by_name[name]["verdict"]
+            print(f"  {name:<25} {'N/A':>10} {'N/A':>10} {v3d:>10} {'🆕新增':>10}")
 
     # 冲突仲裁
     conflict_results = run_conflicts()
@@ -148,10 +161,11 @@ if __name__ == "__main__":
     output = {
         "v1_results": v1_results,
         "v2_results": v2_results,
+        "v3_results": v3_results,
         "conflict_results": conflict_results,
         "arena_summary": arena.summary(),
     }
-    report_path = "/tmp/axiom-battle/axiom_battle_v2_report.json"
+    report_path = "/tmp/axiom-battle/axiom_battle_v3_report.json"
     with open(report_path, "w") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     print(f"\n[报告已保存到 {report_path}]")
