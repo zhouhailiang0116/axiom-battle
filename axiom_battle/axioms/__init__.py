@@ -6,6 +6,16 @@ from .axiom4_layout import LayoutAxiom
 from .axiom5_narrative import NarrativeAxiom
 from .axiom6_boundary import BoundaryAxiom
 from .axiom7_freedom import FreedomAxiom
+from .axiom8_causal import CausalAxiom
+
+# v2 精化版
+from .axiom_v2_growth import GrowthAxiomV2
+from .axiom_v2_light import LightAxiomV2
+from .axiom_v2_color import ColorAxiomV2
+from .axiom_v2_narrative import NarrativeAxiomV2
+from .axiom_v2_boundary import BoundaryAxiomV2
+from .axiom_v2_freedom import FreedomAxiomV2
+from .axiom8_causal_v2 import CausalAxiomV2
 
 AXIOM_REGISTRY = {
     "axiom1_growth": GrowthAxiom,
@@ -15,11 +25,27 @@ AXIOM_REGISTRY = {
     "axiom5_narrative": NarrativeAxiom,
     "axiom6_boundary": BoundaryAxiom,
     "axiom7_freedom": FreedomAxiom,
+    "axiom8_causal": CausalAxiom,
+}
+
+AXIOM_REGISTRY_V2 = {
+    "axiom1_growth_v2": GrowthAxiomV2,
+    "axiom2_light_v2": LightAxiomV2,
+    "axiom3_color_v2": ColorAxiomV2,
+    "axiom4_layout_v2": LayoutAxiom,
+    "axiom5_narrative_v2": NarrativeAxiomV2,
+    "axiom6_boundary_v2": BoundaryAxiomV2,
+    "axiom7_freedom_v2": FreedomAxiomV2,
+    "axiom8_causal_v2": CausalAxiomV2,
 }
 
 __all__ = [
     "Axiom", "Attack", "AxiomCase", "Severity", "Verdict",
     "GrowthAxiom", "LightAxiom", "ColorAxiom",
     "LayoutAxiom", "NarrativeAxiom", "BoundaryAxiom", "FreedomAxiom",
-    "AXIOM_REGISTRY",
+    "CausalAxiom",
+    "GrowthAxiomV2", "LightAxiomV2", "ColorAxiomV2",
+    "NarrativeAxiomV2", "BoundaryAxiomV2", "FreedomAxiomV2",
+    "CausalAxiomV2",
+    "AXIOM_REGISTRY", "AXIOM_REGISTRY_V2",
 ]

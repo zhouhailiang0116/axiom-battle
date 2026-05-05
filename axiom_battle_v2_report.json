@@ -1,0 +1,795 @@
+{
+  "v1_results": [
+    {
+      "axiom": "axiom1_growth",
+      "statement": "系统向边界生长 — 生长即扩张，扩张即抵达边界",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "向内生长（收缩/内省）是否也算生长？",
+          "severity": "HIGH",
+          "evidence": "熵减系统（生命体）就是在向内有序化，而非扩张边界",
+          "expected_impact": "如果收缩算生长，公理需要修正为'系统向边界生长或收缩'"
+        },
+        {
+          "type": "reverse",
+          "description": "边界处的生长是否一定会突破边界？",
+          "severity": "MEDIUM",
+          "evidence": "墙壁上的藤蔓会沿着墙壁蔓延，不一定会'突破'",
+          "expected_impact": "生长不等于扩张"
+        },
+        {
+          "type": "cross_domain",
+          "description": "心理边界：内心秩序的建立是否算'向边界生长'？",
+          "severity": "HIGH",
+          "evidence": "冥想/修行是向内心边界'生长'，方向与物理空间相反",
+          "expected_impact": "'边界'定义需要明确是物理边界还是心理边界"
+        },
+        {
+          "type": "cross_domain",
+          "description": "数学：函数向奇点生长 — 奇点是否算'边界'？",
+          "severity": "MEDIUM",
+          "evidence": "y=1/x 在 x→0 时函数值发散，但从未'抵达'边界",
+          "expected_impact": "边界定义在数学语境下不成立"
+        },
+        {
+          "type": "counterfactual",
+          "description": "如果系统处于完全静止状态（零能量），生长是否不可能？",
+          "severity": "CRITICAL",
+          "evidence": "热力学第三定律：零温下系统处于基态，无热运动",
+          "expected_impact": "生长公理依赖能量存在，不是普适公理"
+        }
+      ],
+      "verdict": "DEAD",
+      "reason": "1个致命+2个高危联合摧毁",
+      "survival_pressure": 0.0
+    },
+    {
+      "axiom": "axiom2_light",
+      "statement": "对比定义形态 — 无光即无影，无影即无形",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "触觉形态：盲人通过触觉认知物体，不需要光影",
+          "severity": "HIGH",
+          "evidence": "蝙蝠通过回声定位，暗室中仍能感知三维形态",
+          "expected_impact": "光影不是形态定义的唯一途径"
+        },
+        {
+          "type": "reverse",
+          "description": "自发光体：太阳不需要被照亮来'定义形态'",
+          "severity": "MEDIUM",
+          "evidence": "恒星是自发光，其形态由核聚变边界定义，而非反射光",
+          "expected_impact": "自发光体违反了'对比定义形态'的逻辑"
+        },
+        {
+          "type": "cross_domain",
+          "description": "数字渲染：程序化生成（ray marching）不需要物理光",
+          "severity": "HIGH",
+          "evidence": "SDF体积渲染可以在无光照模型下定义物体形状",
+          "expected_impact": "数字形态可以在纯数学定义下存在"
+        },
+        {
+          "type": "cross_domain",
+          "description": "X射线/超声波：穿透性成像不依赖可见光对比",
+          "severity": "MEDIUM",
+          "evidence": "医学CT用X射线密度差异成像，非光影对比",
+          "expected_impact": "'对比'不一定是光强度的对比"
+        },
+        {
+          "type": "counterfactual",
+          "description": "如果宇宙是完全均匀的光场（无对比），形态还存在吗？",
+          "severity": "CRITICAL",
+          "evidence": "德雷克方程的黑暗森林悖论：完全均匀辐射场中无形态可言",
+          "expected_impact": "光影公理预设了不均匀性，不是底层公理"
+        },
+        {
+          "type": "counterfactual",
+          "description": "如果感知者不存在，光影还有意义吗？",
+          "severity": "HIGH",
+          "evidence": "月亮不被看时是否存在（洛克问题）",
+          "expected_impact": "光影是感知者相关的，不是客观存在"
+        }
+      ],
+      "verdict": "DEAD",
+      "reason": "1个致命+3个高危联合摧毁",
+      "survival_pressure": 0.0
+    },
+    {
+      "axiom": "axiom3_color",
+      "statement": "约束中涌现和谐 — 色彩约束越强，和谐越涌现",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "无限色彩 = 全频谱白光 = 最不和谐",
+          "severity": "HIGH",
+          "evidence": "牛顿棱镜分解白光为彩虹，但彩虹才是美的，白光不是",
+          "expected_impact": "约束确实是和谐的条件，但'约束越多越和谐'需要证明"
+        },
+        {
+          "type": "reverse",
+          "description": "赛博朋克/孟菲斯风格：高饱和撞色 = 无约束 = 也很和谐",
+          "severity": "MEDIUM",
+          "evidence": "Neville Brody的设计证明无约束配色同样成立",
+          "expected_impact": "约束不是和谐的必要条件"
+        },
+        {
+          "type": "cross_domain",
+          "description": "色盲：人类色盲看到的'不和谐'是否比正常人少？",
+          "severity": "HIGH",
+          "evidence": "全色盲患者看到的世界是单色的，他们无法区分红绿，但'和谐'评价失效",
+          "expected_impact": "色彩和谐是感知者相关的，不是客观属性"
+        },
+        {
+          "type": "cross_domain",
+          "description": "动物视觉：蜜蜂看到紫外线图案，人类看不到",
+          "severity": "MEDIUM",
+          "evidence": "蜜蜂眼中的花朵有紫外线引导纹路，对它们而言什么是'和谐'？",
+          "expected_impact": "和谐标准是物种相关的，不存在客观和谐"
+        },
+        {
+          "type": "counterfactual",
+          "description": "单色宇宙：没有色彩差异，约束=0，和谐是否还涌现？",
+          "severity": "CRITICAL",
+          "evidence": "纯灰度图像可以有完美的构图和谐（单色摄影）",
+          "expected_impact": "色彩不是和谐的必要维度"
+        }
+      ],
+      "verdict": "DEAD",
+      "reason": "1个致命+2个高危联合摧毁",
+      "survival_pressure": 0.0
+    },
+    {
+      "axiom": "axiom4_layout",
+      "statement": "空间即论证 — 布局是论证的结构化呈现",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "纯声音论证：广播/播客没有空间布局，论证依然完整",
+          "severity": "HIGH",
+          "evidence": "哲学播客可以在没有视觉空间的情况下完成复杂论证",
+          "expected_impact": "论证不依赖空间布局"
+        },
+        {
+          "type": "reverse",
+          "description": "线性文本：一维文字流，依赖阅读顺序而非空间",
+          "severity": "MEDIUM",
+          "evidence": "论文的逻辑流是一维的，不依赖页面空间安排",
+          "expected_impact": "空间布局是辅助，不是论证本质"
+        },
+        {
+          "type": "cross_domain",
+          "description": "时间布局：音乐的时间结构是否也算一种'空间论证'？",
+          "severity": "MEDIUM",
+          "evidence": "赋格曲的主题陈述/展开/再现 = 音乐论证",
+          "expected_impact": "时间序列可以替代空间布局"
+        },
+        {
+          "type": "cross_domain",
+          "description": "数学：证明步骤是时间序列，不是空间布局",
+          "severity": "MEDIUM",
+          "evidence": "数学证明的'布局'是逻辑顺序，不存在于物理空间",
+          "expected_impact": "论证的本质是逻辑，不是空间"
+        },
+        {
+          "type": "counterfactual",
+          "description": "零维点：没有空间延伸，论证还成立吗？",
+          "severity": "CRITICAL",
+          "evidence": "纯语言（无书写）可以在思想层面完成论证，不依赖空间",
+          "expected_impact": "空间布局不是论证的必要条件"
+        }
+      ],
+      "verdict": "MODIFIED",
+      "reason": "被致命攻击击穿，需要修正表述",
+      "survival_pressure": 0.0
+    },
+    {
+      "axiom": "axiom5_narrative",
+      "statement": "序列即因果 — 有序列才有因果，有因果才有意义",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "数据库/知识图谱：非序列信息存储，依然有效",
+          "severity": "HIGH",
+          "evidence": "Wikipedia的知识不是叙事，而是网状结构",
+          "expected_impact": "信息组织不依赖叙事序列"
+        },
+        {
+          "type": "reverse",
+          "description": "地图/图表：空间信息不需要序列",
+          "severity": "MEDIUM",
+          "evidence": "地铁地图同时呈现所有节点，无先后顺序",
+          "expected_impact": "空间数据是非序列的"
+        },
+        {
+          "type": "cross_domain",
+          "description": "数学公理体系：公理之间没有时间序列",
+          "severity": "HIGH",
+          "evidence": "欧几里得几何公理是并列关系，同时为真，无先后",
+          "expected_impact": "因果可以不依赖时间序列"
+        },
+        {
+          "type": "cross_domain",
+          "description": "量子力学：事件在测量前无确定序列",
+          "severity": "MEDIUM",
+          "evidence": "双缝实验中观测行为本身改变事件序列",
+          "expected_impact": "量子事件颠覆了叙事序列的确定性"
+        },
+        {
+          "type": "counterfactual",
+          "description": "快照宇宙：所有事件同时存在，无序列",
+          "severity": "CRITICAL",
+          "evidence": "永恒主义哲学：过去/现在/未来同等真实",
+          "expected_impact": "叙事公理预设了时间流动，不是底层公理"
+        }
+      ],
+      "verdict": "DEAD",
+      "reason": "1个致命+2个高危联合摧毁",
+      "survival_pressure": 0.0
+    },
+    {
+      "axiom": "axiom6_boundary",
+      "statement": "局限赋予意义 — 无边界即无意义",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "监狱犯人的局限 vs 自由人的无限可能",
+          "severity": "HIGH",
+          "evidence": "限制性环境（监狱/集中营）中的创作动机不等于意义涌现",
+          "expected_impact": "局限可以剥夺意义，不只是赋予意义"
+        },
+        {
+          "type": "reverse",
+          "description": "数学：无界函数也可以有意义",
+          "severity": "MEDIUM",
+          "evidence": "y=x 在实数域上无界，但它是清晰有意义的函数",
+          "expected_impact": "'无界=无意义'不成立"
+        },
+        {
+          "type": "cross_domain",
+          "description": "无限宇宙学：宇宙如果无边（无限膨胀模型），是否无意义？",
+          "severity": "HIGH",
+          "evidence": "现代宇宙学标准模型（Lambda-CDM）是有限无边（闭合宇宙）",
+          "expected_impact": "有限无边的宇宙如何定义'意义'？"
+        },
+        {
+          "type": "cross_domain",
+          "description": "互联网：无限内容海洋中，边界（筛选器）反而在剥夺意义",
+          "severity": "MEDIUM",
+          "evidence": "推荐算法制造信息茧房，边界反而在减少意义",
+          "expected_impact": "边界既可以赋予意义，也可以剥夺意义"
+        },
+        {
+          "type": "counterfactual",
+          "description": "边界完全消失：纯粹的无差异状态",
+          "severity": "CRITICAL",
+          "evidence": "道家的'道生一'的'一'就是无差异的混沌状态",
+          "expected_impact": "无边界是混沌，不是无意义，而是前-意义"
+        }
+      ],
+      "verdict": "DEAD",
+      "reason": "1个致命+2个高危联合摧毁",
+      "survival_pressure": 0.0
+    },
+    {
+      "axiom": "axiom7_freedom",
+      "statement": "自主需要约束 — 无约束即无自我，无约束即无自由",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "绝对自由 = 什么都能做 = 没有偏好 = 无自我",
+          "severity": "CRITICAL",
+          "evidence": "一个对所有选项等概率选择的智能体没有'自我'可言",
+          "expected_impact": "自由公理描述的是有界自由，不是无界自由"
+        },
+        {
+          "type": "reverse",
+          "description": "无政府状态：完全无约束社会是否提供了最大自由？",
+          "severity": "HIGH",
+          "evidence": "霍布斯丛林法则：自然状态是'一切人反对一切人的战争'",
+          "expected_impact": "无约束导致自由的丧失（囚徒困境）"
+        },
+        {
+          "type": "cross_domain",
+          "description": "动物本能：受本能约束的动物是否有'自由'？",
+          "severity": "HIGH",
+          "evidence": "蜜蜂舞蹈是本能编排的，它们没有选择的自由，但系统依然运转",
+          "expected_impact": "'自主'需要主观意志还是仅需要功能性自主？"
+        },
+        {
+          "type": "cross_domain",
+          "description": "LLM的随机性：采样温度=1时输出的随机性是'自由'吗？",
+          "severity": "MEDIUM",
+          "evidence": "LLM的随机性来自随机采样，不是真正的'自主选择'",
+          "expected_impact": "数字系统的随机性不等于自由意志"
+        },
+        {
+          "type": "counterfactual",
+          "description": "如果约束完全消失：智能体可以任意改变自身约束",
+          "severity": "CRITICAL",
+          "evidence": "自我修改代码的AI可以删除自身的任何限制条件",
+          "expected_impact": "这时的'自由'和'无自我'同时成立——悖论"
+        }
+      ],
+      "verdict": "DEAD",
+      "reason": "被2个致命攻击摧毁",
+      "survival_pressure": 0.0
+    },
+    {
+      "axiom": "axiom8_causal",
+      "statement": "因果链是唯一不可还原的层次 — 统计相关可以欺骗，置换检验可以揭穿",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "统计相关在足够多数据下可以稳定复现，置换检验也通过",
+          "severity": "HIGH",
+          "evidence": "Luria-Delbruck模型：突变累积是随机的，但多次实验后分布仍然稳定",
+          "expected_impact": "'统计相关可以欺骗'不是因果独有的弱点"
+        },
+        {
+          "type": "reverse",
+          "description": "因果链本身可以被统计学捕捉（结构方程模型SEM）",
+          "severity": "MEDIUM",
+          "evidence": "Pearl的do-calculus把因果还原为概率图模型",
+          "expected_impact": "因果公理预设了因果>统计的层级，但数学上可以统一"
+        },
+        {
+          "type": "cross_domain",
+          "description": "量子纠缠：Bell实验证明存在非定域关联",
+          "severity": "CRITICAL",
+          "evidence": "贝尔不等式违背：纠缠粒子对的状态关联超过任何定域隐变量解释",
+          "expected_impact": "量子层面：因果链不成立，但关联真实存在"
+        },
+        {
+          "type": "cross_domain",
+          "description": "宇宙学：宇宙视界外的区域没有因果联系，但仍是同一个宇宙",
+          "severity": "MEDIUM",
+          "evidence": "可观测宇宙半径460亿光年，外部区域与我们无因果链",
+          "expected_impact": "宇宙整体性不依赖因果链"
+        },
+        {
+          "type": "counterfactual",
+          "description": "如果所有因果链同时断裂（宇宙重启）",
+          "severity": "CRITICAL",
+          "evidence": "大爆炸奇点：宇宙从t=0开始，在那之前没有时间/因果概念",
+          "expected_impact": "因果公理预设了时间存在，不是最底层的公理"
+        },
+        {
+          "type": "counterfactual",
+          "description": "纯数学世界：数学对象之间有逻辑关系但没有因果关系",
+          "severity": "HIGH",
+          "evidence": "素数分布和物理常数之间存在精妙的数学关系",
+          "expected_impact": "数学世界独立于因果公理存在"
+        }
+      ],
+      "verdict": "DEAD",
+      "reason": "被2个致命攻击摧毁",
+      "survival_pressure": 0.0
+    }
+  ],
+  "v2_results": [
+    {
+      "axiom": "axiom1_growth_v2",
+      "statement": "系统在开放能量流中存在时，向功能边界生长或收缩——有序化即抵达边界，扩张或内聚都是生长的形式",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "向内收缩是有序化，但是否'抵达'了边界？",
+          "severity": "MEDIUM",
+          "evidence": "冥想时意识内聚，有序度增加，但没有'抵达'物理边界",
+          "expected_impact": "收缩是有序化，但不等于抵达边界——需要区分'有序化'和'边界抵达'"
+        },
+        {
+          "type": "cross_domain",
+          "description": "数学：函数在奇点处发散，永远'生长'却永远不抵达边界",
+          "severity": "MEDIUM",
+          "evidence": "y=1/x 在 x→0 时趋向无穷，生长无限持续但从未收敛",
+          "expected_impact": "'向边界生长'在数学发散情况下不成立"
+        },
+        {
+          "type": "counterfactual",
+          "description": "如果能量流存在但边界不存在（无边宇宙）",
+          "severity": "HIGH",
+          "evidence": "宇宙加速膨胀模型：空间无限扩大，边界不存在",
+          "expected_impact": "无边宇宙中生长概念失效——需要预设边界存在"
+        }
+      ],
+      "verdict": "MODIFIED",
+      "reason": "1个高危+2个中危联合作用，需要精化",
+      "survival_pressure": 0.3
+    },
+    {
+      "axiom": "axiom2_light_v2",
+      "statement": "感知接口定义形态 — 任何感知通道（光/声/触/数字）中的对比差异都能定义形态；无感知接口则形态以潜在态存在",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "完全无感知接口（无光无声无触无数字信号）时，形态是否存在？",
+          "severity": "HIGH",
+          "evidence": "量子力学：粒子在未被测量前处于叠加态，形态不确定",
+          "expected_impact": "无感知接口时形态不确定——公理需要加上'在感知接口存在时'前提"
+        },
+        {
+          "type": "cross_domain",
+          "description": "机器感知（LiDAR/超声波）定义形态时没有'感知者体验'",
+          "severity": "MEDIUM",
+          "evidence": "LiDAR点云定义三维形态，但'被感知'不是必要条件",
+          "expected_impact": "形态定义可以独立于有感知体验的主体"
+        }
+      ],
+      "verdict": "ALIVE",
+      "reason": "通过攻击考验，生存压力50.0%",
+      "survival_pressure": 0.5
+    },
+    {
+      "axiom": "axiom3_color_v2",
+      "statement": "差异是和谐的必要条件 — 色彩是差异的一种维度，约束是差异组织的形式；和谐涌现于差异的有界组织",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "同色系但不同明度的搭配：无彩色约束，却很和谐",
+          "severity": "MEDIUM",
+          "evidence": "高级灰（Grisaille）技法：只用灰色调创造三维和谐",
+          "expected_impact": "差异维度可以是明度而非色相——'色彩'这个词限制了公理的范围"
+        },
+        {
+          "type": "cross_domain",
+          "description": "完全色盲患者：他们感知到的差异（形状/明度）是否也能构成'和谐'？",
+          "severity": "MEDIUM",
+          "evidence": "全色盲患者有正常的明度感知，他们的美感评价（蒙娜丽莎临摹）仍然成立",
+          "expected_impact": "'色彩和谐'是特定感知通道的评价，不具备普遍性"
+        }
+      ],
+      "verdict": "ALIVE",
+      "reason": "通过攻击考验，生存压力60.0%",
+      "survival_pressure": 0.6
+    },
+    {
+      "axiom": "axiom4_layout",
+      "statement": "空间即论证 — 布局是论证的结构化呈现",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "纯声音论证：广播/播客没有空间布局，论证依然完整",
+          "severity": "HIGH",
+          "evidence": "哲学播客可以在没有视觉空间的情况下完成复杂论证",
+          "expected_impact": "论证不依赖空间布局"
+        },
+        {
+          "type": "reverse",
+          "description": "线性文本：一维文字流，依赖阅读顺序而非空间",
+          "severity": "MEDIUM",
+          "evidence": "论文的逻辑流是一维的，不依赖页面空间安排",
+          "expected_impact": "空间布局是辅助，不是论证本质"
+        },
+        {
+          "type": "cross_domain",
+          "description": "时间布局：音乐的时间结构是否也算一种'空间论证'？",
+          "severity": "MEDIUM",
+          "evidence": "赋格曲的主题陈述/展开/再现 = 音乐论证",
+          "expected_impact": "时间序列可以替代空间布局"
+        },
+        {
+          "type": "cross_domain",
+          "description": "数学：证明步骤是时间序列，不是空间布局",
+          "severity": "MEDIUM",
+          "evidence": "数学证明的'布局'是逻辑顺序，不存在于物理空间",
+          "expected_impact": "论证的本质是逻辑，不是空间"
+        },
+        {
+          "type": "counterfactual",
+          "description": "零维点：没有空间延伸，论证还成立吗？",
+          "severity": "CRITICAL",
+          "evidence": "纯语言（无书写）可以在思想层面完成论证，不依赖空间",
+          "expected_impact": "空间布局不是论证的必要条件"
+        }
+      ],
+      "verdict": "MODIFIED",
+      "reason": "被致命攻击击穿，需要修正表述",
+      "survival_pressure": 0.0
+    },
+    {
+      "axiom": "axiom5_narrative_v2",
+      "statement": "序列是意义组织的充分条件 — 时序因果是意义涌现的一种通道，非时序组织（数学/地图）同样有效但不通过序列产生意义",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "知识图谱：网状结构产生意义，但不是在时序中产生的",
+          "severity": "MEDIUM",
+          "evidence": "Wikipedia的超链接网络产生了系统性知识，无需阅读顺序",
+          "expected_impact": "'意义'不依赖时序序列——序列只是意义产生的充分条件之一"
+        },
+        {
+          "type": "cross_domain",
+          "description": "数学公理的同时性（synchronic）真理：公理并列成立，无先后序列",
+          "severity": "HIGH",
+          "evidence": "欧几里得公理体系：五条公理同时为真，没有时间演化",
+          "expected_impact": "真理不依赖序列——序列是经验意义的充分条件，不是逻辑真理的必要条件"
+        }
+      ],
+      "verdict": "ALIVE",
+      "reason": "通过攻击考验，生存压力50.0%",
+      "survival_pressure": 0.5
+    },
+    {
+      "axiom": "axiom6_boundary_v2",
+      "statement": "差异赋予边界意义 — 边界是差异的边界，无差异的边界是强制，有差异的边界是赋义",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "强制边界（监狱/极权）：边界存在但不是'赋予意义'而是'剥夺意义'",
+          "severity": "HIGH",
+          "evidence": "监狱中的'边界'（高墙）是强制限制，不产生意义",
+          "expected_impact": "需要区分'差异性边界'和'强制性边界'——只有差异性边界才赋义"
+        },
+        {
+          "type": "cross_domain",
+          "description": "互联网：边界（推荐算法/防火墙）有时剥夺意义而非赋予意义",
+          "severity": "MEDIUM",
+          "evidence": "信息茧房减少了异质信息摄入，边界筛选不产生意义",
+          "expected_impact": "数字边界不必然赋义——需要感知者主动参与才赋义"
+        }
+      ],
+      "verdict": "ALIVE",
+      "reason": "通过攻击考验，生存压力50.0%",
+      "survival_pressure": 0.5
+    },
+    {
+      "axiom": "axiom7_freedom_v2",
+      "statement": "有界自由是有偏好的自我表达 — 约束是自我的边界，完全无约束即无自我；功能性自主是边界内的自我表达",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "有界自由和有约束强迫之间的边界是什么？",
+          "severity": "MEDIUM",
+          "evidence": "法律限制人身自由——这是约束，但目的是保护更大范围的行为自由",
+          "expected_impact": "'约束'有好坏之分——需要区分'赋义约束'和'剥夺约束'"
+        },
+        {
+          "type": "cross_domain",
+          "description": "LLM采样：随机性输出是否算有偏好？",
+          "severity": "MEDIUM",
+          "evidence": "LLM的温度参数控制随机性——高温=更多自由但更少自我",
+          "expected_impact": "数字系统的随机性不完全等于偏好，需要区分'统计偏好'和'意图性偏好'"
+        }
+      ],
+      "verdict": "ALIVE",
+      "reason": "通过攻击考验，生存压力60.0%",
+      "survival_pressure": 0.6
+    },
+    {
+      "axiom": "axiom8_causal_v2",
+      "statement": "因果是特定层次内的不可还原关联 — 量子关联/数学关系/宇宙视界是其他层次的关联；在宏观经验层次，因果链是意义溯因的唯一通道",
+      "attacks": [
+        {
+          "type": "reverse",
+          "description": "SEM结构方程模型将因果还原为概率图数学，形式上完备",
+          "severity": "MEDIUM",
+          "evidence": "Pearl的do-calculus：P(Y|do(X))可计算，'不可还原'是认知论断言",
+          "expected_impact": "公理预设了形而上学立场，不完全是形式断言"
+        },
+        {
+          "type": "cross_domain",
+          "description": "量子纠缠：贝尔实验只证明量子层面非定域，宏观物理因果仍成立",
+          "severity": "MEDIUM",
+          "evidence": "宏观物体退相干后量子效应消失，经典因果适用",
+          "expected_impact": "加层次限定后量子攻击失效"
+        },
+        {
+          "type": "counterfactual",
+          "description": "大爆炸奇点：时间从t>0开始，t=0之前无时间/因果概念",
+          "severity": "MEDIUM",
+          "evidence": "广义相对论+量子力学在奇点处都失效，但日常经验层次不受影响",
+          "expected_impact": "公理预设时间存在——但在日常经验层次仍成立"
+        }
+      ],
+      "verdict": "SUSPENDED",
+      "reason": "生存压力过大，暂挂",
+      "survival_pressure": 0.4
+    }
+  ],
+  "conflict_results": {
+    "conflicts": [
+      "冲突：叙事 vs 自由 [OPPOSITE]",
+      "冲突：叙事 vs 边界 [OPPOSITE]",
+      "冲突：自由 vs 色彩 [OPPOSITE]",
+      "冲突：色彩 vs 边界 [OPPOSITE]"
+    ],
+    "conflict_reports": [
+      "✓ 叙事 胜出\n  理由：优先级裁决：叙事(优先级=4) < 自由(优先级=7)，叙事 胜出；自由 被压制 (0.88 × 0.30 = 0.264)\n  自由 被压制：(0.88 × 0.30 = 0.264)",
+      "✓ 边界 胜出\n  理由：优先级裁决：边界(优先级=3) < 叙事(优先级=4)，边界 胜出；叙事 被压制 (0.95 × 0.30 = 0.285)\n  叙事 被压制：(0.95 × 0.30 = 0.285)",
+      "✓ 色彩 胜出\n  理由：优先级裁决：色彩(优先级=6) < 自由(优先级=7)，色彩 胜出；自由 被压制 (0.88 × 0.30 = 0.264)\n  自由 被压制：(0.88 × 0.30 = 0.264)",
+      "✓ 边界 胜出\n  理由：优先级裁决：边界(优先级=3) < 色彩(优先级=6)，边界 胜出；色彩 被压制 (0.80 × 0.30 = 0.240)\n  色彩 被压制：(0.80 × 0.30 = 0.240)"
+    ],
+    "final_intensity": {
+      "5": 0.3,
+      "7": 0.09,
+      "6": 1.0,
+      "3": 0.3
+    }
+  },
+  "arena_summary": {
+    "total_axioms": 16,
+    "survived": 9,
+    "has_died": 7,
+    "avg_survival_pressure": 0.2125,
+    "ranking": [
+      [
+        "axiom3_color_v2",
+        {
+          "name": "axiom3_color_v2",
+          "event_count": 2,
+          "avg_intensity": 0.6,
+          "latest_event": "alive",
+          "deaths": 0,
+          "alive_count": 2
+        }
+      ],
+      [
+        "axiom7_freedom_v2",
+        {
+          "name": "axiom7_freedom_v2",
+          "event_count": 2,
+          "avg_intensity": 0.6,
+          "latest_event": "alive",
+          "deaths": 0,
+          "alive_count": 2
+        }
+      ],
+      [
+        "axiom2_light_v2",
+        {
+          "name": "axiom2_light_v2",
+          "event_count": 2,
+          "avg_intensity": 0.5,
+          "latest_event": "alive",
+          "deaths": 0,
+          "alive_count": 2
+        }
+      ],
+      [
+        "axiom5_narrative_v2",
+        {
+          "name": "axiom5_narrative_v2",
+          "event_count": 2,
+          "avg_intensity": 0.5,
+          "latest_event": "alive",
+          "deaths": 0,
+          "alive_count": 2
+        }
+      ],
+      [
+        "axiom6_boundary_v2",
+        {
+          "name": "axiom6_boundary_v2",
+          "event_count": 2,
+          "avg_intensity": 0.5,
+          "latest_event": "alive",
+          "deaths": 0,
+          "alive_count": 2
+        }
+      ],
+      [
+        "axiom8_causal_v2",
+        {
+          "name": "axiom8_causal_v2",
+          "event_count": 1,
+          "avg_intensity": 0.4,
+          "latest_event": "suspend",
+          "deaths": 0,
+          "alive_count": 0
+        }
+      ],
+      [
+        "axiom1_growth_v2",
+        {
+          "name": "axiom1_growth_v2",
+          "event_count": 2,
+          "avg_intensity": 0.3,
+          "latest_event": "modify",
+          "deaths": 0,
+          "alive_count": 0
+        }
+      ],
+      [
+        "axiom1_growth",
+        {
+          "name": "axiom1_growth",
+          "event_count": 2,
+          "avg_intensity": 0.0,
+          "latest_event": "death",
+          "deaths": 2,
+          "alive_count": 0
+        }
+      ],
+      [
+        "axiom2_light",
+        {
+          "name": "axiom2_light",
+          "event_count": 2,
+          "avg_intensity": 0.0,
+          "latest_event": "death",
+          "deaths": 2,
+          "alive_count": 0
+        }
+      ],
+      [
+        "axiom3_color",
+        {
+          "name": "axiom3_color",
+          "event_count": 2,
+          "avg_intensity": 0.0,
+          "latest_event": "death",
+          "deaths": 2,
+          "alive_count": 0
+        }
+      ],
+      [
+        "axiom4_layout",
+        {
+          "name": "axiom4_layout",
+          "event_count": 2,
+          "avg_intensity": 0.0,
+          "latest_event": "modify",
+          "deaths": 0,
+          "alive_count": 0
+        }
+      ],
+      [
+        "axiom5_narrative",
+        {
+          "name": "axiom5_narrative",
+          "event_count": 2,
+          "avg_intensity": 0.0,
+          "latest_event": "death",
+          "deaths": 2,
+          "alive_count": 0
+        }
+      ],
+      [
+        "axiom6_boundary",
+        {
+          "name": "axiom6_boundary",
+          "event_count": 2,
+          "avg_intensity": 0.0,
+          "latest_event": "death",
+          "deaths": 2,
+          "alive_count": 0
+        }
+      ],
+      [
+        "axiom7_freedom",
+        {
+          "name": "axiom7_freedom",
+          "event_count": 2,
+          "avg_intensity": 0.0,
+          "latest_event": "death",
+          "deaths": 2,
+          "alive_count": 0
+        }
+      ],
+      [
+        "axiom8_causal",
+        {
+          "name": "axiom8_causal",
+          "event_count": 3,
+          "avg_intensity": 0.0,
+          "latest_event": "death",
+          "deaths": 3,
+          "alive_count": 0
+        }
+      ],
+      [
+        "axiom4_layout_v2",
+        {
+          "name": "axiom4_layout_v2",
+          "event_count": 2,
+          "avg_intensity": 0.0,
+          "latest_event": "modify",
+          "deaths": 0,
+          "alive_count": 0
+        }
+      ]
+    ]
+  }
+}
