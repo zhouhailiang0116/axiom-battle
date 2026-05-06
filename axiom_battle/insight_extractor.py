@@ -2,11 +2,62 @@
 axiom_battle Insight Extractor
 护城河核心：每天从对抗日志中提取一个可分享的洞察
 被搜索、被人引用、形成历史积累
+
+认识论反思层：
+每次对抗结果的深层解读——为什么这个公理活了/死了，
+这对"我们如何认识真理"有什么启示。
+不是哲学引用，是从对抗数据中自己生长出来的认识论。
 """
 import json
 from pathlib import Path
 from typing import Optional
 from dataclasses import dataclass, asdict
+
+
+# ═══════════════════════════════════════════════════════════
+# 哲学认识论反思模板库（从悟道体系生长出来）
+# ═══════════════════════════════════════════════════════════
+EPISTEMOLOGY_TEMPLATES = {
+    # 公理死亡 → 认识论教训
+    ("DEAD", "counterfactual"): [
+        "移除这个公理后，系统依然运作。这意味着该公理是人们以为的必要条件，实际上是冗余的。认识论教训：必要条件往往被高估，直到你亲手移除它。",
+        "反事实测试揭示：该公理从未被真正需要过。认识论教训：最危险的假设不是错误的，而是从未被质疑过的。",
+    ],
+    ("DEAD", "reverse"): [
+        "对立的命题同时成立，说明该公理只是众多选项中的一个。认识论教训：二元对立遮蔽了多元可能性。",
+        "攻击者证明了公理的反面，同样成立。这打破了对「基础」的迷信。认识论教训：真理不是唯一解，是幸存者。",
+    ],
+    ("DEAD", "cross_domain"): [
+        "在一个领域颠扑不破的公理，跨领域后失效。认识论教训：没有超领域的真理，只有被边界保护的真理。",
+        "领域边界划定的那一刻，公理的适用范围也随之冻结。认识论教训：定义边界就是设置失效条件。",
+    ],
+    ("DEAD", "internal_contradiction"): [
+        "公理自身的表述内含矛盾——攻击者没有发明矛盾，只是把它揭示出来。认识论教训：最致命的反驳来自公理内部。",
+    ],
+    # 公理存活 → 认识论教训
+    ("ALIVE", "survived_critical"): [
+        "经历了最高强度的攻击仍然站立。认识论教训：强壮的信念不是没被质疑过，而是在质疑中存活。",
+        "CRITICAL级别的攻击反而证明了该公理的正确性。认识论教训：能被攻击验证的公理才是真公理。",
+    ],
+    ("ALIVE", "narrowed_boundary"): [
+        "活下来了，但适用范围被收窄。认识论教训：存活有时候是退守，不是胜利。",
+    ],
+    # 公理修正 → 认识论教训
+    ("MODIFIED", None): [
+        "不是死亡，是进化。适用范围收窄了，但核心内核保留。认识论教训：科学进步不是证伪旧真理，是给真理划定更精确的边界。",
+        "修正的本质是：承认「我只在条件下成立」。认识论教训：成熟=知道自己的边界。",
+    ],
+    # 攻击类型对应的元认识教训
+    ("_meta", "counterfactual"): [
+        "反事实攻击的价值：不需要证明公理错误，只需要证明「没有它也行」。这是认识论上的极大化——最小公理集。",
+    ],
+    ("_meta", "reverse"): [
+        "正向证明和反向证明可以同时成立。认识论教训：逻辑完备不是两个方向都成立，是在某个方向上选择放弃。",
+    ],
+    ("_meta", "cross_domain"): [
+        "跨域攻击揭示：公理的「自明性」往往是领域特定的认知惯性。认识论教训：常识不过是在熟悉的领域里忘记去质疑。",
+    ],
+}
 
 
 @dataclass
@@ -22,6 +73,8 @@ class BattleInsight:
     causal_chain: str            # 因果链简述（限120字）
     insight_text: str           # 对外分享的洞察句子（限200字）
     search_tags: list[str]      # ["证伪主义", "公理对抗", "边界公理"]
+    # 新增：哲学认识论反思
+    epistemology_lesson: str = ""  # 从悟道体系生长出的认识论教训
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -30,6 +83,7 @@ class BattleInsight:
         """对外展示的Markdown格式"""
         icon = {"ALIVE": "✅", "STRENGTHENED": "🔼", "MODIFIED": "🔽", "DEAD": "💀", "SUSPENDED": "⏸"}.get(self.verdict, "⚪")
         tags = " ".join(f"`{t}`" for t in self.search_tags)
+        ep_section = f"\n\n**认识论反思：** {self.epistemology_lesson}" if self.epistemology_lesson else ""
         return f"""## {icon} {self.axiom_name}公理 #{self.axiom_id}
 
 **判决：** {self.verdict}（生存压力 {self.survival_pressure:.0%}）
@@ -41,6 +95,7 @@ class BattleInsight:
 **因果链：** {self.causal_chain}
 
 > {self.insight_text}
+{ep_section}
 
 {tags}
 """
@@ -129,6 +184,35 @@ def _generate_tags(axiom_id: str, verdict: str) -> list[str]:
     return list(set(base))
 
 
+def _extract_epistemology_lesson(case: dict, verdict: str, attack_type: str) -> str:
+    """根据判决和攻击类型，从模板库中提取或生成认识论反思"""
+    # 尝试直接匹配
+    key = (verdict, attack_type)
+    if key in EPISTEMOLOGY_TEMPLATES:
+        import random
+        return random.choice(EPISTEMOLOGY_TEMPLATES[key])
+
+    # 尝试元层匹配
+    meta_key = ("_meta", attack_type)
+    if meta_key in EPISTEMOLOGY_TEMPLATES:
+        import random
+        return random.choice(EPISTEMOLOGY_TEMPLATES[meta_key])
+
+    # 回退：根据判决和严重程度生成
+    attacks = case.get("attacks", [])
+    severity_score = {"CRITICAL": 1.0, "HIGH": 0.7, "MEDIUM": 0.4, "LOW": 0.1}
+    has_critical = any(a.get("severity") == "CRITICAL" for a in attacks)
+
+    if verdict == "DEAD":
+        return "公理死亡揭示：该公理在某个条件下不成立，而这正是证伪主义的核心——不是全盘否定，是精确定位失效边界。"
+    elif verdict == "ALIVE" and has_critical:
+        return "经历了CRITICAL级攻击仍然存活。认识论教训：真正牢固的公理不需要免于质疑，需要的是能通过质疑来证明自己。"
+    elif verdict == "MODIFIED":
+        return "公理被修正而非死亡。认识论教训：修正比坚守更诚实，因为承认了条件性就是承认了成熟。"
+    else:
+        return ""
+
+
 def extract_insight_from_case(case: dict, date: str) -> BattleInsight:
     """从单个case字典提取洞察"""
     axiom_id = case.get("axiom", case.get("name", "unknown"))
@@ -176,6 +260,7 @@ def extract_insight_from_case(case: dict, date: str) -> BattleInsight:
         causal_chain=_generate_casual_chain(case),
         insight_text=_generate_insight_text(case, verdict),
         search_tags=_generate_tags(axiom_id, verdict),
+        epistemology_lesson=_extract_epistemology_lesson(case, verdict, attack_type),
     )
 
 
