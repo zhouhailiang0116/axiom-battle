@@ -1,0 +1,61 @@
+name: Daily Axiom Battle Insight
+
+on:
+  schedule:
+    # Run at 14:00 UTC = 22:00 北京时间，每天一次
+    - cron: '0 14 * * *'
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  insight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -e .
+
+      - name: Run axiom battle
+        run: |
+          cd ${{ github.workspace }}
+          python push_daily_insight.py
+
+      - name: Commit and push insight
+        run: |
+          cd ${{ github.workspace }}
+          git config --local user.email "hermes@wudao.ai"
+          git config --local user.name "Hermes Agent"
+          git add insights/ docs/daily_insight.md
+          git diff --cached --quiet || git commit -m "ci: daily insight $(date +%Y-%m-%d)"
+          git push
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'docs/'
+
+  deploy:
+    needs: insight
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
