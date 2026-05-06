@@ -30,19 +30,13 @@ jobs:
         run: |
           pip install -e .
 
-      - name: Run axiom battle
+      - name: Run axiom battle + push insight via API
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd ${{ github.workspace }}
           python push_daily_insight.py
-
-      - name: Commit and push insight
-        run: |
-          cd ${{ github.workspace }}
-          git config --local user.email "hermes@wudao.ai"
-          git config --local user.name "Hermes Agent"
-          git add insights/ docs/daily_insight.md
-          git diff --cached --quiet || git commit -m "ci: daily insight $(date +%Y-%m-%d)"
-          git push
+          # push_daily_insight.py handles GitHub API push internally
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
