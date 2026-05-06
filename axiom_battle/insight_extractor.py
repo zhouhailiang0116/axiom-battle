@@ -76,6 +76,13 @@ class BattleInsight:
     # 新增：哲学认识论反思
     epistemology_lesson: str = ""  # 从悟道体系生长出的认识论教训
 
+    # ═══════════════════════════════════════════════════════════
+    # 反阴影层（Self-Verification：每个洞察都要能承受自己的对立面）
+    # ═══════════════════════════════════════════════════════════
+    shadow_insight: str = ""      # 如果这个洞察是错的，真正的错误会是什么
+    shadow_attack_type: str = ""  # 攻击这个洞察的方法论
+    self_verification_status: str = "UNVERIFIED"  # UNVERIFIED / SURVIVED / FALSIFIED
+
     def to_dict(self) -> dict:
         return asdict(self)
 
@@ -84,6 +91,10 @@ class BattleInsight:
         icon = {"ALIVE": "✅", "STRENGTHENED": "🔼", "MODIFIED": "🔽", "DEAD": "💀", "SUSPENDED": "⏸"}.get(self.verdict, "⚪")
         tags = " ".join(f"`{t}`" for t in self.search_tags)
         ep_section = f"\n\n**认识论反思：** {self.epistemology_lesson}" if self.epistemology_lesson else ""
+        shadow_section = ""
+        if self.shadow_insight:
+            sv_icon = {"SURVIVED": "🛡️", "FALSIFIED": "⚠️", "UNVERIFIED": "❓"}.get(self.self_verification_status, "❓")
+            shadow_section = f"\n\n**反阴影验证** {sv_icon}：{self.shadow_insight}"
         return f"""## {icon} {self.axiom_name}公理 #{self.axiom_id}
 
 **判决：** {self.verdict}（生存压力 {self.survival_pressure:.0%}）
@@ -95,7 +106,7 @@ class BattleInsight:
 **因果链：** {self.causal_chain}
 
 > {self.insight_text}
-{ep_section}
+{ep_section}{shadow_section}
 
 {tags}
 """
@@ -213,6 +224,48 @@ def _extract_epistemology_lesson(case: dict, verdict: str, attack_type: str) -> 
         return ""
 
 
+# ═══════════════════════════════════════════════════════════════════════
+# 反阴影生成（Self-Verification Protocol）
+# 每个洞察必须能承受自己对立面的攻击
+# ═══════════════════════════════════════════════════════════════════════
+SHADOW_TEMPLATES = {
+    "DEAD": {
+        "reverse": "如果对立命题「{axiom}不成立」是错的，错误在于：我们把「某些情况下成立」误认为是「永远不成立」。反阴影：攻击者是否混淆了「局部失效」和「完全死亡」？",
+        "cross_domain": "如果这个公理在A领域死了但在B领域活着，那「死亡」的判断是否过于笼统？反阴影：我们是否把领域边界内的失败当成了公理本身的失败？",
+        "counterfactual": "如果「移除它系统仍运作」不等于「它无用」，那我们的攻击是否只证明了它不是「唯一」而是「之一」？反阴影：多元性不等于冗余。",
+        "default": "如果这个公理其实没死，错误在于：我们把「被修正」当成「被杀死」了。公理修正≠公理死亡。",
+    },
+    "ALIVE": {
+        "reverse": "如果对立命题「{axiom}不成立」其实是正确的，只是没被当前攻击检测到呢？反阴影：没被发现 ≠ 不存在。",
+        "cross_domain": "如果把这个公理移到完全陌生的领域，它还能存活吗？反阴影：当前存活可能只是因为还没遇到真正的对手。",
+        "counterfactual": "如果移除这个公理后系统确实崩溃了，但那是因为其他公理在替它承担职责呢？反阴影：存活证据 ≠ 必要条件证明。",
+        "default": "如果这个公理其实是错的，只是当前攻击方法不够强力呢？反阴影：ALIVE verdict 是暂时的，DEAD verdict 才是永恒的（除非重新定义公理）。",
+    },
+    "MODIFIED": {
+        "default": "如果修正后的公理在新领域也失败了，那修正本身是否不够深？反阴影：边界收窄是进化还是退守？",
+    },
+}
+
+def _generate_shadow_insight(case: dict, verdict: str, attack_type: str) -> tuple[str, str]:
+    """生成反阴影洞察：就是这个洞察本身错了，真正的错误会是什么"""
+    axiom = case.get("axiom", "")
+    key = verdict
+    atk_templates = SHADOW_TEMPLATES.get(verdict, SHADOW_TEMPLATES["ALIVE"])
+    template = atk_templates.get(attack_type, atk_templates.get("default", ""))
+
+    shadow_text = template.format(axiom=axiom)
+
+    # 确定反阴影的攻击类型（和原始攻击互补）
+    shadow_attack_map = {
+        "reverse": "counterfactual",
+        "counterfactual": "reverse",
+        "cross_domain": "internal_contradiction",
+    }
+    shadow_attack = shadow_attack_map.get(attack_type, "cross_domain")
+
+    return shadow_text, shadow_attack
+
+
 def extract_insight_from_case(case: dict, date: str) -> BattleInsight:
     """从单个case字典提取洞察"""
     axiom_id = case.get("axiom", case.get("name", "unknown"))
@@ -249,6 +302,9 @@ def extract_insight_from_case(case: dict, date: str) -> BattleInsight:
     elif verdict == "ALIVE":
         survival_pressure = 0.2
 
+    # 生成反阴影（每个洞察的对立版本）
+    shadow_text, shadow_attack = _generate_shadow_insight(case, verdict, attack_type)
+
     return BattleInsight(
         date=date,
         axiom_id=axiom_id,
@@ -261,6 +317,9 @@ def extract_insight_from_case(case: dict, date: str) -> BattleInsight:
         insight_text=_generate_insight_text(case, verdict),
         search_tags=_generate_tags(axiom_id, verdict),
         epistemology_lesson=_extract_epistemology_lesson(case, verdict, attack_type),
+        shadow_insight=shadow_text,
+        shadow_attack_type=shadow_attack,
+        self_verification_status="UNVERIFIED",
     )
 
 
