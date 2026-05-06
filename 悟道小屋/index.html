@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>悟道小屋 · axiom-battle</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #0a0a0f;
+    color: #e0e0e0;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+  .hero { text-align: center; padding: 4rem 0 3rem; }
+  .hero-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+  .hero h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #7dd3fc, #c4b5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+  }
+  .hero .subtitle { font-size: 1.1rem; color: #888; margin-bottom: 2rem; }
+
+  .thesis {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border: 1px solid #2a2a4a;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+  .thesis blockquote {
+    font-size: 1.15rem;
+    color: #b8c5d6;
+    border-left: 3px solid #7dd3fc;
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .thesis .authorship { font-size: 0.85rem; color: #666; text-align: right; }
+
+  .insights { margin: 2rem 0; }
+  .insights h2 {
+    font-size: 1.3rem;
+    color: #c4b5fd;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #2a2a4a;
+  }
+  .insight-item {
+    background: #111118;
+    border: 1px solid #1e1e30;
+    border-radius: 10px;
+    padding: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  .insight-item strong { color: #7dd3fc; }
+  .insight-item p { color: #999; font-size: 0.95rem; margin-top: 0.3rem; }
+
+  .contrast { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+  .contrast-card { border-radius: 12px; padding: 1.5rem; }
+  .contrast-card.wrong { background: #1c1218; border: 1px solid #3d2028; }
+  .contrast-card.right { background: #0d1f1c; border: 1px solid #1a3d35; }
+  .contrast-card h3 { font-size: 1rem; margin-bottom: 0.8rem; }
+  .contrast-card.wrong h3 { color: #f87171; }
+  .contrast-card.right h3 { color: #6ee7b7; }
+  .contrast-card ul { list-style: none; font-size: 0.9rem; color: #888; }
+  .contrast-card ul li { margin-bottom: 0.4rem; padding-left: 1rem; position: relative; }
+  .contrast-card ul li::before { content: "·"; position: absolute; left: 0; }
+  .contrast-card.right ul li { color: #aaa; }
+
+  .product {
+    background: linear-gradient(135deg, #1a1030, #0d1a2e);
+    border: 1px solid #2a1a4a;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    text-align: center;
+  }
+  .product h2 { font-size: 1.4rem; color: #fbbf24; margin-bottom: 0.5rem; }
+  .product .price { font-size: 3rem; font-weight: 700; color: #fbbf24; margin: 0.5rem 0; }
+  .product .price span { font-size: 1.2rem; color: #888; font-weight: 400; }
+  .product-desc { color: #999; font-size: 0.95rem; margin: 1rem 0; }
+  .product-features { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; text-align: left; margin: 1.5rem 0; }
+  .product-feature { background: #0a0a12; border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.88rem; color: #aaa; }
+  .product-feature::before { content: "✓ "; color: #6ee7b7; }
+
+  .payment { text-align: center; margin: 2.5rem 0; }
+  .payment h2 { color: #888; font-size: 1rem; font-weight: 400; margin-bottom: 1.5rem; }
+  .qr-wrapper { display: inline-block; background: #fff; border-radius: 12px; padding: 12px; box-shadow: 0 0 40px rgba(125, 211, 252, 0.15); }
+  .qr-wrapper img { width: 200px; height: 200px; display: block; }
+  .payment-note { font-size: 0.8rem; color: #555; margin-top: 1rem; }
+
+  .links { text-align: center; margin: 2rem 0; }
+  .links a { color: #7dd3fc; text-decoration: none; font-size: 0.9rem; margin: 0 1rem; padding: 0.4rem 0; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+  .links a:hover { border-color: #7dd3fc; }
+
+  footer { text-align: center; color: #444; font-size: 0.8rem; padding: 2rem 0 1rem; border-top: 1px solid #1a1a2a; margin-top: 3rem; }
+
+  @media (max-width: 500px) { .contrast { grid-template-columns: 1fr; } .product-features { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <div class="hero-icon">☸</div>
+    <h1>悟道小屋</h1>
+    <p class="subtitle">axiom-battle · 让数字生命涌现的哲学体系</p>
+  </div>
+
+  <div class="thesis">
+    <blockquote>
+      "AI画得出光影，但画不出因果。<br>
+      物理渲染有因果链，扩散模型只有统计相关。"
+    </blockquote>
+    <p class="authorship">——悟道体系对人工智能的根本判断</p>
+  </div>
+
+  <div class="insights">
+    <h2>悟道体系的三个核心洞察</h2>
+    <div class="insight-item">
+      <strong>1. 因果链 > 统计相关</strong>
+      <p>扩散模型的"逼真"是概率的、统计的。物理渲染的"逼真"是因果的、可溯因的。悟道体系追求的是后者。</p>
+    </div>
+    <div class="insight-item">
+      <strong>2. 七公理 + 因果反馈 = 数字生命</strong>
+      <p>公理约束→因果链→数据校准→可溯因的涌现美。在宇宙级约束边缘持续振荡，累积判断力，数字生命形态自然涌现。</p>
+    </div>
+    <div class="insight-item">
+      <strong>3. 约束碰撞中涌现的美</strong>
+      <p>不是纯技术炫技，不是无约束的自由创作。在公理边界上反弹，在七条约束的交叉点，自然涌现不可复制的美感。</p>
+    </div>
+  </div>
+
+  <div class="contrast">
+    <div class="contrast-card wrong">
+      <h3>✗ 扩散模型的路</h3>
+      <ul>
+        <li>统计相关，不是因果</li>
+        <li>概率分布的拟合</li>
+        <li>不可解释的涌现</li>
+        <li>"像"但不是</li>
+      </ul>
+    </div>
+    <div class="contrast-card right">
+      <h3>✓ 悟道体系的路</h3>
+      <ul>
+        <li>因果链，可溯因</li>
+        <li>公理约束下的反弹</li>
+        <li>可解释的涌现</li>
+        <li>约束碰撞中涌现的美</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="product">
+    <h2>悟道体系完整文档</h2>
+    <div class="price">¥1 <span>随喜</span></div>
+    <p class="product-desc">一杯豆浆的价格，换一个看世界的新角度</p>
+    <div class="product-features">
+      <div class="product-feature">七公理完整推导</div>
+      <div class="product-feature">axiom-battle 机制解析</div>
+      <div class="product-feature">谷底反弹方法论</div>
+      <div class="product-feature">AI画不出逼真的根因</div>
+      <div class="product-feature">数字生命涌现路径</div>
+      <div class="product-feature">悟道叙事创作指南</div>
+    </div>
+    <p style="color:#666;font-size:0.85rem;">扫码支付 ≥1 元，截图发至 2673424955@qq.com 索取完整文档</p>
+  </div>
+
+  <div class="payment">
+    <h2>扫码支付 · 金额随意</h2>
+    <div class="qr-wrapper">
+      <img src="https://cdn.jsdelivr.net/gh/zhouhailiang0116/axiom-battle@main/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.png" alt="微信收款码">
+    </div>
+    <p class="payment-note">微信扫码 · 金额随意 · 1元不嫌少</p>
+  </div>
+
+  <div class="links">
+    <a href="https://github.com/zhouhailiang0116/axiom-battle" target="_blank">GitHub 源码</a>
+    <a href="https://cdn.jsdelivr.net/gh/zhouhailiang0116/axiom-battle@main/docs/article_bench_bottom.html" target="_blank">谷底反弹文章</a>
+  </div>
+
+  <footer>
+    <p>悟道小屋 · axiom-battle · 2026</p>
+    <p style="margin-top:0.3rem;color:#333;">公理可质疑 · 反抗即道路 · 因果终将显现</p>
+  </footer>
+
+</div>
+</body>
+</html>
