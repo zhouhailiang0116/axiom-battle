@@ -83,16 +83,24 @@ def pick_top_insight(insights) -> dict:
 
 
 def update_public_file(insight, insights: list, date_str: str):
-    """生成 docs/daily_insight.md（GitHub Pages 可访问）"""
-    content = f"""# axiom-battle 每日洞察
+    """生成 docs/daily_insight.md（GitHub Pages 可访问，人机双友好）"""
+    # Markdown 版（人读）
+    ep_block = f"\n\n> **认识论反思：** {insight.epistemology_lesson}" if insight.epistemology_lesson else ""
+
+    md_content = f"""# axiom-battle 每日洞察
 
 **{date_str}**
 
 ---
 
-## 今日最重要的公理对抗结果
+## 今日头条
 
-{insight.to_markdown()}
+**{insight.axiom_name}公理 #{insight.axiom_id}** | {insight.verdict} | 生存压力 {insight.survival_pressure:.0%}
+
+- **攻击类型：** {insight.attack_type}
+- **攻击描述：** {insight.attack_description}
+- **因果链：** {insight.causal_chain}
+- **洞察：** {insight.insight_text}{ep_block}
 
 ---
 
@@ -100,22 +108,40 @@ def update_public_file(insight, insights: list, date_str: str):
 
 """
     for i in sorted(insights[-10:], key=lambda x: x.date, reverse=True):
-        content += f"**{i.date}** | {i.axiom_name} | {i.verdict} | {i.insight_text[:80]}...\n"
+        ep_tag = " 📌" if i.epistemology_lesson else ""
+        md_content += f"**{i.date}** | {i.axiom_name} | {i.verdict} | {i.insight_text[:60]}...{ep_tag}\n"
 
-    content += f"""
+    md_content += f"""
 
 ---
 
-## 完整洞察日志
-
-[查看所有洞察](insights/daily_insights.jsonl)
-
-**数据来源：** axiom-battle 每日自动对抗  
-**更新频率：** 每天一次  
-**关于 axiom-battle：** https://github.com/zhouhailiang0116/axiom-battle
+**数据格式：** `insights/daily_insights.jsonl`（机器可读，JSONL每行一条）  
+**索引：** `insights/index.json`  
+**更新：** 每天 14:00 UTC  
+**来源：** axiom-battle 自动对抗系统
 """
     with open(PUBLIC_INSIGHT_FILE, "w") as f:
-        f.write(content)
+        f.write(md_content)
+
+
+def update_agent_friendly_file(insight, insights: list, date_str: str):
+    """生成 docs/insight.jsonl — 机器专用，每条一行，零Markdown"""
+    # 单条顶级洞察（人读markdown里的核心数据）
+    top_entry = insight.to_dict()
+    top_entry["date"] = date_str
+
+    # 追加到 JSONL
+    AGENT_JSONL = REPO / "docs" / "insight.jsonl"
+    with open(AGENT_JSONL, "a") as f:
+        f.write(json.dumps(top_entry, ensure_ascii=False) + "\n")
+
+    # 重写完整版（保留历史）
+    ALL_AGENT_JSONL = REPO / "docs" / "insights_all.jsonl"
+    with open(ALL_AGENT_JSONL, "w") as f:
+        for i in insights:
+            entry = i.to_dict()
+            entry["date"] = date_str
+            f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
 
 def update_index(insights: list):
@@ -194,6 +220,7 @@ if __name__ == "__main__":
     all_history = load_history(str(INSIGHT_LOG))
     update_public_file(top, all_history, today)
     update_index(all_history)
+    update_agent_friendly_file(top, all_history, today)
     print(f"  ✅ 生成 {PUBLIC_INSIGHT_FILE}")
 
     # 5. 推送到 GitHub gh-pages
@@ -201,6 +228,8 @@ if __name__ == "__main__":
     for fp, msg in [
         (str(PUBLIC_INSIGHT_FILE), f"docs: daily insight {today}"),
         (str(INDEX_FILE), f"insights: update index with {today} insight"),
+        (str(REPO / "docs" / "insight.jsonl"), f"docs: daily insight.jsonl {today}"),
+        (str(REPO / "docs" / "insights_all.jsonl"), f"docs: insights_all.jsonl full history"),
     ]:
         if Path(fp).exists():
             push_to_github(fp, msg)
