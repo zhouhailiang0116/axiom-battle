@@ -1,8 +1,3 @@
----
-layout: default
-title: axiom_battle_推广文章
----
-
 # 公理对抗赛：让 AI 自己证明自己错了
 
 > 最强的公理，最需要被攻击。
