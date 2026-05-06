@@ -4,9 +4,42 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "axiom-battle"
-version = "0.1.0"
+version = "0.1.1"
 description = "公理对抗赛引擎 — Popper证伪主义的代码化"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
-dependencies = ["fastapi", "uvicorn[standard]", "pydantic"]
+authors = [
+    {name = "悟道体系", email = "zhouhailiang0116@github.com"}
+]
+keywords = ["axiom", "popper", "falsification", "self-improvement", "agent", "reasoning"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+api = ["fastapi", "uvicorn[standard]", "pydantic"]
+
+[project.scripts]
+axiom-battle = "axiom_battle.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/zhouhailiang0116/axiom-battle"
+Repository = "https://github.com/zhouhailiang0116/axiom-battle"
+Documentation = "https://github.com/zhouhailiang0116/axiom-battle/blob/main/README.md"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["axiom_battle*"]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+axiom_battle = ["py.typed"]
