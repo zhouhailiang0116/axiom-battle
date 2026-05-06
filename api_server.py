@@ -13,9 +13,6 @@ from typing import Optional
 import sys
 from pathlib import Path
 
-# axiom_battle 模块
-sys.path.insert(0, str(Path(__file__).parent))
-
 from axiom_battle.axioms import AXIOM_REGISTRY, AXIOM_REGISTRY_V2, AXIOM_REGISTRY_V3
 from axiom_battle.axioms.axiom_base import AxiomCase
 
