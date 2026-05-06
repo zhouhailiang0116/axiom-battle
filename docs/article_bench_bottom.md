@@ -43,7 +43,7 @@ axiom-battle 是悟道体系的最小产品演示。它的代码本身就是"谷
 
 如果你觉得这件事有意思、有价值，欢迎用微信扫码支持：
 
-![微信收款码](https://cdn.jsdelivr.net/gh/zhouhailiang0116/axiom-battle@main/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.png)
+![微信收款码](../微信收款码.webp)
 
 金额随意，心意是真实的。所有收入将用于悟道体系持续开发。
 
@@ -52,6 +52,7 @@ axiom-battle 是悟道体系的最小产品演示。它的代码本身就是"谷
 ## 项目地址
 
 - **GitHub**: https://github.com/zhouhailiang0116/axiom-battle
+- **GitHub Pages**: https://zhouhailiang0116.github.io/axiom-battle/
 - **Gitee 镜像**: https://gitee.com/zhouhailiang111/axiom-battle
 - **CDN**: https://cdn.jsdelivr.net/gh/zhouhailiang0116/axiom-battle@main/
 
