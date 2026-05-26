@@ -166,6 +166,7 @@ if __name__ == "__main__":
         "arena_summary": arena.summary(),
     }
     report_path = "/tmp/axiom-battle/axiom_battle_v3_report.json"
+    _os.makedirs(_os.path.dirname(report_path), exist_ok=True)
     with open(report_path, "w") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     print(f"\n[报告已保存到 {report_path}]")
